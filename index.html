@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Page | Senior Lecturer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .nav-link {
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -4px;
+            left: 0;
+            background-color: #2563eb;
+            transition: width 0.3s ease;
+        }
+
+        .nav-link.active::after {
+            width: 100%;
+        }
+
+        .section-content {
+            display: none;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+
+        .section-content.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .card {
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-900">
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200">
+        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+            <div class="font-bold text-xl tracking-tight text-blue-700">Dr. Alex Thompson</div>
+            
+            <button id="menu-btn" class="lg:hidden p-2">
+                <i data-lucide="menu"></i>
+            </button>
+
+            <ul class="hidden lg:flex space-x-6 font-medium text-[13px] uppercase tracking-wider text-slate-600">
+                <li><a href="#" onclick="showSection('about')" class="nav-link active" data-section="about">About</a></li>
+                <li><a href="#" onclick="showSection('teaching')" class="nav-link" data-section="teaching">Teaching</a></li>
+                <li><a href="#" onclick="showSection('research')" class="nav-link" data-section="research">Research</a></li>
+                <li><a href="#" onclick="showSection('news')" class="nav-link" data-section="news">News</a></li>
+                <li><a href="#" onclick="showSection('blog')" class="nav-link" data-section="blog">Blog</a></li>
+                <li><a href="#" onclick="showSection('students')" class="nav-link" data-section="students">Students</a></li>
+                <li><a href="#" onclick="showSection('contact')" class="nav-link" data-section="contact">Contact</a></li>
+            </ul>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden lg:hidden bg-white border-b border-slate-200 px-6 py-4">
+            <ul class="flex flex-col space-y-4 font-medium">
+                <li><a href="#" onclick="showSection('about')" class="block text-slate-600">About</a></li>
+                <li><a href="#" onclick="showSection('teaching')" class="block text-slate-600">Teaching</a></li>
+                <li><a href="#" onclick="showSection('research')" class="block text-slate-600">Research</a></li>
+                <li><a href="#" onclick="showSection('news')" class="block text-slate-600">News</a></li>
+                <li><a href="#" onclick="showSection('blog')" class="block text-slate-600">Blog</a></li>
+                <li><a href="#" onclick="showSection('students')" class="block text-slate-600">Students</a></li>
+                <li><a href="#" onclick="showSection('contact')" class="block text-slate-600">Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="max-w-5xl mx-auto px-6 py-12">
+        
+        <!-- About Section -->
+        <section id="about" class="section-content active">
+            <div class="grid md:grid-cols-3 gap-12 items-start">
+                <div class="md:col-span-1">
+                    <div class="aspect-square rounded-2xl bg-slate-200 overflow-hidden shadow-inner mb-6 relative group">
+                        <div class="absolute inset-0 flex items-center justify-center text-slate-400">
+                            <i data-lucide="user" size="64"></i>
+                        </div>
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=600" 
+                             alt="Profile Photo" 
+                             class="w-full h-full object-cover opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+                             onload="this.style.opacity='1'">
+                    </div>
+                    <div class="space-y-4">
+                        <div class="flex items-center gap-3 text-slate-600">
+                            <i data-lucide="graduation-cap" class="w-5 h-5"></i>
+                            <span class="text-sm">PhD in Artificial Intelligence</span>
+                        </div>
+                        <div class="flex items-center gap-3 text-slate-600">
+                            <i data-lucide="map-pin" class="w-5 h-5"></i>
+                            <span class="text-sm">Ada Lovelace Building, Room 2.10</span>
+                        </div>
+                        <div class="flex gap-4 pt-4">
+                            <a href="#" class="text-slate-400 hover:text-blue-600 transition-colors"><i data-lucide="linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="md:col-span-2">
+                    <h1 class="text-4xl font-bold text-slate-900 mb-4">Dr. Alex Thompson</h1>
+                    <h2 class="text-xl text-blue-600 font-medium mb-6">Senior Lecturer in Digital Pedagogy</h2>
+                    <div class="prose prose-slate max-w-none text-slate-600 space-y-4 leading-relaxed">
+                        <p>
+                            Welcome! I am a Senior Lecturer at the University of Bristol. My work sits at the intersection of Data Science education and student-centered learning environments.
+                        </p>
+                        <p>
+                            With over a decade of experience in higher education, I am currently the programme director of the highly successful MSc in Data Science programme.
+                        </p>
+                    </div>
+                    
+                    <div class="mt-12 grid grid-cols-1 sm:grid-cols-2 gap-4">
+                        <div class="p-6 bg-white border border-slate-200 rounded-xl">
+                            <h3 class="font-bold text-slate-900 mb-2">Teaching Philosophy</h3>
+                            <p class="text-sm text-slate-600 italic">"Empowering students through collaborative problem-solving."</p>
+                        </div>
+                        <div class="p-6 bg-white border border-slate-200 rounded-xl">
+                            <h3 class="font-bold text-slate-900 mb-2">Key Interests</h3>
+                            <div class="flex flex-wrap gap-2 mt-2">
+                                <span class="px-3 py-1 bg-slate-100 text-slate-700 text-xs rounded-full">AI</span>
+                                <span class="px-3 py-1 bg-slate-100 text-slate-700 text-xs rounded-full">Project based learning</span>
+                                <span class="px-3 py-1 bg-slate-100 text-slate-700 text-xs rounded-full">Authentic assessments</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Teaching Section -->
+        <section id="teaching" class="section-content">
+            <h2 class="text-3xl font-bold text-slate-900 mb-8">Teaching Portfolio</h2>
+            
+            <div class="mb-12">
+                <h3 class="text-xl font-semibold text-blue-700 border-b-2 border-blue-100 pb-2 mb-6">Current Courses (2024-25)</h3>
+                <div class="grid gap-6">
+                    <div class="bg-white p-6 rounded-xl border border-slate-200 card">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h4 class="text-lg font-bold">EMATM0049: Data Science Projects</h4>
+                                <p class="text-slate-500 text-sm">Postgraduate Masters | Module Lead</p>
+                            </div>
+                            <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-xs font-bold uppercase">Active</span>
+                        </div>
+                        <p class="text-slate-600 text-sm mb-4">Final individual dissertation unit for MSc Data Science students</p>
+                        <div class="flex gap-4">
+                            <button onclick="showSection('cs301-notes')" class="text-blue-600 text-sm font-semibold flex items-center gap-1 hover:underline">Lecture Notes <i data-lucide="chevron-right" class="w-4 h-4"></i></button>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-xl border border-slate-200 card">
+                        <div class="flex justify-between items-start mb-4">
+                            <div>
+                                <h4 class="text-lg font-bold">EMATM0050: Data Science Group Project</h4>
+                                <p class="text-slate-500 text-sm">Postgraduate Masters | Unit Director</p>
+                            </div>
+                            <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-xs font-bold uppercase">Active</span>
+                        </div>
+                        <p class="text-slate-600 text-sm mb-4">Final group dissertation unit for MSc Data Science students.</p>
+                        <div class="flex gap-4">
+                            <button onclick="showSection('ed502-notes')" class="text-blue-600 text-sm font-semibold flex items-center gap-1 hover:underline">Lecture Notes <i data-lucide="chevron-right" class="w-4 h-4"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div>
+                <h3 class="text-xl font-semibold text-slate-700 border-b-2 border-slate-100 pb-2 mb-6">Past Teaching</h3>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left">
+                        <thead>
+                            <tr class="text-slate-400 text-sm uppercase tracking-wider">
+                                <th class="py-4 font-semibold">Academic Year</th>
+                                <th class="py-4 font-semibold">Code</th>
+                                <th class="py-4 font-semibold">Course Name</th>
+                                <th class="py-4 font-semibold">Level</th>
+                            </tr>
+                        </thead>
+                        <tbody class="divide-y divide-slate-100">
+                            <tr>
+                                <td class="py-4 text-slate-600">2023-2024</td>
+                                <td class="py-4 font-medium">CS101</td>
+                                <td class="py-4">Software Development Programming and algorithms</td>
+                                <td class="py-4">UG Year 1</td>
+                            </tr>
+                            <tr>
+                                <td class="py-4 text-slate-600">2022-2023</td>
+                                <td class="py-4 font-medium">CS210</td>
+                                <td class="py-4">Introduction to Artificial Intelligence</td>
+                                <td class="py-4">UG Year 2</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+
+        <!-- CS301 Lecture Notes Section -->
+        <section id="cs301-notes" class="section-content">
+            <div class="mb-8">
+                <button onclick="showSection('teaching')" class="text-blue-600 text-sm font-semibold flex items-center gap-1 hover:underline mb-4">
+                    <i data-lucide="arrow-left" class="w-4 h-4"></i> Back to Teaching
+                </button>
+                <h2 class="text-3xl font-bold text-slate-900">CS301: Lecture Notes</h2>
+                <p class="text-slate-500">Human-Computer Interaction (2024-25)</p>
+            </div>
+
+            <div class="space-y-8 prose prose-slate max-w-none">
+                <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm">
+                    <h3 class="text-xl font-bold text-slate-900 border-b pb-2 mb-4">Week 1: Introduction to HCI</h3>
+                    <p class="text-slate-600 mb-4">Focus on the fundamental goals of HCI: usability, utility, and safety. We discussed Norman's Doors and the concept of affordances.</p>
+                    <h4 class="font-semibold text-slate-800 mb-2">Key Links:</h4>
+                    <ul class="list-disc pl-5 space-y-1">
+                        <li><a href="https://www.nngroup.com/articles/ten-usability-heuristics/" target="_blank" class="text-blue-600 hover:underline">Nielsen's 10 Usability Heuristics</a></li>
+                        <li><a href="#" class="text-blue-600 hover:underline">Lecture 1 Slides (PDF)</a></li>
+                    </ul>
+                </div>
+                <div class="border-2 border-dashed border-slate-200 rounded-2xl p-12 text-center text-slate-400">
+                    <i data-lucide="plus" class="mx-auto mb-2 w-8 h-8 opacity-20"></i>
+                    <p class="text-sm">Paste additional lecture notes here</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ED502 Lecture Notes Section -->
+        <section id="ed502-notes" class="section-content">
+            <div class="mb-8">
+                <button onclick="showSection('teaching')" class="text-blue-600 text-sm font-semibold flex items-center gap-1 hover:underline mb-4">
+                    <i data-lucide="arrow-left" class="w-4 h-4"></i> Back to Teaching
+                </button>
+                <h2 class="text-3xl font-bold text-slate-900">ED502: Lecture Notes</h2>
+                <p class="text-slate-500">Digital Transformation in Education (2024-25)</p>
+            </div>
+
+            <div class="space-y-8 prose prose-slate max-w-none">
+                <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm">
+                    <h3 class="text-xl font-bold text-slate-900 border-b pb-2 mb-4">Module Overview</h3>
+                    <p class="text-slate-600">This module explores how emerging technologies are reshaping pedagogical frameworks.</p>
+                </div>
+                <div class="border-2 border-dashed border-slate-200 rounded-2xl p-12 text-center text-slate-400">
+                    <i data-lucide="plus" class="mx-auto mb-2 w-8 h-8 opacity-20"></i>
+                    <p class="text-sm">Paste additional lecture notes here</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Research Section -->
+        <section id="research" class="section-content">
+            <h2 class="text-3xl font-bold text-slate-900 mb-8">Research & Publications</h2>
+            
+            <div class="space-y-6 mb-12">
+                <div class="bg-white p-6 rounded-xl border border-slate-200">
+                    <p class="font-bold text-slate-900">"Rethinking the Lecture: Hybrid models for Post-Pandemic CS Education."</p>
+                    <p class="text-xs text-slate-500 mt-1">Thompson, A., & Green, L. (2023). Journal of Computer Science Education, 45(2).</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- News Section -->
+        <section id="news" class="section-content">
+            <h2 class="text-3xl font-bold text-slate-900 mb-8">Latest News</h2>
+            <div class="space-y-8 relative">
+                <div class="relative flex items-center group is-active">
+                    <div class="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-blue-600 text-white shadow shrink-0">
+                        <i data-lucide="award" class="w-5 h-5"></i>
+                    </div>
+                    <div class="ml-6 p-6 rounded-xl border border-slate-200 bg-white shadow-sm w-full">
+                        <div class="flex items-center justify-between space-x-2 mb-1">
+                            <div class="font-bold text-slate-900">Excellence in Teaching Award</div>
+                            <time class="font-medium text-[12px] text-blue-600 uppercase">Feb 2024</time>
+                        </div>
+                        <div class="text-slate-500 text-sm">Honoured to receive the Faculty Teaching Excellence award for 2023.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog Section -->
+        <section id="blog" class="section-content">
+            <h2 class="text-3xl font-bold text-slate-900 mb-8">Reflections on Pedagogy</h2>
+            <div class="grid sm:grid-cols-2 gap-8">
+                <article class="bg-white border border-slate-200 rounded-2xl overflow-hidden card group">
+                    <div class="h-48 bg-slate-200 relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&q=80&w=800" alt="Blog Post" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110">
+                    </div>
+                    <div class="p-6">
+                        <div class="text-[11px] font-bold text-blue-600 uppercase mb-2">Teaching Tips</div>
+                        <h3 class="text-lg font-bold text-slate-900 mb-3 group-hover:text-blue-600 transition-colors">The 5-Minute Feedback Loop</h3>
+                        <p class="text-sm text-slate-500 mb-6 leading-relaxed">Exploring why the timing of feedback is often more important than the content itself.</p>
+                        <div class="flex items-center justify-between pt-4 border-t border-slate-100">
+                            <span class="text-xs text-slate-400">March 1, 2024</span>
+                            <a href="#" class="text-blue-600 text-xs font-bold uppercase tracking-widest hover:underline">Read More</a>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <!-- Students Section -->
+        <section id="students" class="section-content">
+            <h2 class="text-3xl font-bold text-slate-900 mb-8">Research Students</h2>
+            <div class="bg-blue-50 border border-blue-100 p-8 rounded-2xl mb-12">
+                <h3 class="font-bold text-blue-900 mb-2">Prospective Students</h3>
+                <p class="text-blue-800/80 text-sm">
+                    I am currently accepting 1-2 PhD students for the 2025 intake.
+                </p>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section-content">
+            <h2 class="text-3xl font-bold text-slate-900 mb-12 text-center">Contact Information</h2>
+            <div class="max-w-2xl mx-auto space-y-8">
+                <div class="bg-white p-10 rounded-3xl border border-slate-200 shadow-sm flex flex-col md:flex-row gap-8 items-center text-center md:text-left">
+                    <div class="bg-blue-600 text-white p-6 rounded-2xl">
+                        <i data-lucide="mail" size="32"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-sm font-bold uppercase text-slate-400 tracking-widest mb-1">Direct Email</h3>
+                        <p class="text-xl font-semibold text-slate-900">a.thompson@excellence.edu</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-white border-t border-slate-200 py-12">
+        <div class="max-w-5xl mx-auto px-6 text-center">
+            <p class="text-slate-400 text-sm">&copy; 2024 Dr. Alex Thompson.</p>
+        </div>
+    </footer>
+
+    <script>
+        lucide.createIcons();
+
+        function showSection(sectionId) {
+            document.querySelectorAll('.section-content').forEach(s => s.classList.remove('active'));
+            document.getElementById(sectionId).classList.add('active');
+            
+            const primarySections = ['about', 'teaching', 'research', 'news', 'blog', 'students', 'contact'];
+            
+            document.querySelectorAll('.nav-link').forEach(l => {
+                l.classList.remove('active');
+                if (primarySections.includes(sectionId) && l.getAttribute('data-section') === sectionId) {
+                    l.classList.add('active');
+                } else if (!primarySections.includes(sectionId) && l.getAttribute('data-section') === 'teaching') {
+                    l.classList.add('active');
+                }
+            });
+
+            document.getElementById('mobile-menu').classList.add('hidden');
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        document.getElementById('menu-btn').onclick = () => {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        };
+    </script>
+</body>
+</html>
