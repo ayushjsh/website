@@ -125,8 +125,8 @@
                 </div>
                 
                 <div class="md:col-span-2">
-                    <h1 class="text-4xl font-bold text-slate-900 mb-4">Dr. Alex Thompson</h1>
-                    <h2 class="text-xl text-blue-600 font-medium mb-6">Senior Lecturer in Digital Pedagogy</h2>
+                    <h1 class="text-4xl font-bold text-slate-900 mb-4">Dr. Ayush Joshi</h1>
+                    <h2 class="text-xl text-blue-600 font-medium mb-6">Senior Lecturer in Data Science, FHEA</h2>
                     <div class="prose prose-slate max-w-none text-slate-600 space-y-4 leading-relaxed">
                         <p>
                             Welcome! I am a Senior Lecturer at the University of Bristol. My work sits at the intersection of Data Science education and student-centered learning environments.
@@ -159,12 +159,12 @@
             <h2 class="text-3xl font-bold text-slate-900 mb-8">Teaching Portfolio</h2>
             
             <div class="mb-12">
-                <h3 class="text-xl font-semibold text-blue-700 border-b-2 border-blue-100 pb-2 mb-6">Current Courses (2024-25)</h3>
+                <h3 class="text-xl font-semibold text-blue-700 border-b-2 border-blue-100 pb-2 mb-6">Current Courses (2025-26)</h3>
                 <div class="grid gap-6">
                     <div class="bg-white p-6 rounded-xl border border-slate-200 card">
                         <div class="flex justify-between items-start mb-4">
                             <div>
-                                <h4 class="text-lg font-bold">EMATM0049: Data Science Projects</h4>
+                                <h4 class="text-lg font-bold">EMATM0047: Data Science Projects</h4>
                                 <p class="text-slate-500 text-sm">Postgraduate Masters | Module Lead</p>
                             </div>
                             <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-xs font-bold uppercase">Active</span>
@@ -178,7 +178,7 @@
                     <div class="bg-white p-6 rounded-xl border border-slate-200 card">
                         <div class="flex justify-between items-start mb-4">
                             <div>
-                                <h4 class="text-lg font-bold">EMATM0050: Data Science Group Project</h4>
+                                <h4 class="text-lg font-bold">EMATM0044: Data Science Group Project</h4>
                                 <p class="text-slate-500 text-sm">Postgraduate Masters | Unit Director</p>
                             </div>
                             <span class="bg-green-100 text-green-700 px-3 py-1 rounded-full text-xs font-bold uppercase">Active</span>
@@ -196,25 +196,32 @@
                 <div class="overflow-x-auto">
                     <table class="w-full text-left">
                         <thead>
-                            <tr class="text-slate-400 text-sm uppercase tracking-wider">
+                            <tr class="text-slate-400 text-sm uppercase tracking-wider border-b border-slate-200">
                                 <th class="py-4 font-semibold">Academic Year</th>
                                 <th class="py-4 font-semibold">Code</th>
                                 <th class="py-4 font-semibold">Course Name</th>
                                 <th class="py-4 font-semibold">Level</th>
+                                <th class="py-4 font-semibold">Resources</th>
                             </tr>
                         </thead>
                         <tbody class="divide-y divide-slate-100">
                             <tr>
                                 <td class="py-4 text-slate-600">2023-2024</td>
                                 <td class="py-4 font-medium">CS101</td>
-                                <td class="py-4">Software Development Programming and algorithms</td>
+                                <td class="py-4">Introduction to Programming (Python)</td>
                                 <td class="py-4">UG Year 1</td>
+                                <td class="py-4">
+                                    <button onclick="showSection('cs101-notes')" class="text-blue-600 text-sm font-semibold hover:underline">Lecture Notes</button>
+                                </td>
                             </tr>
                             <tr>
                                 <td class="py-4 text-slate-600">2022-2023</td>
                                 <td class="py-4 font-medium">CS210</td>
-                                <td class="py-4">Introduction to Artificial Intelligence</td>
+                                <td class="py-4">Data Structures and Algorithms</td>
                                 <td class="py-4">UG Year 2</td>
+                                <td class="py-4">
+                                    <button onclick="showSection('cs210-notes')" class="text-blue-600 text-sm font-semibold hover:underline">Lecture Notes</button>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
@@ -222,7 +229,6 @@
             </div>
         </section>
 
-        <!-- CS301 Lecture Notes Section -->
         <section id="cs301-notes" class="section-content">
             <div class="mb-8">
                 <button onclick="showSection('teaching')" class="text-blue-600 text-sm font-semibold flex items-center gap-1 hover:underline mb-4">
@@ -249,7 +255,6 @@
             </div>
         </section>
 
-        <!-- ED502 Lecture Notes Section -->
         <section id="ed502-notes" class="section-content">
             <div class="mb-8">
                 <button onclick="showSection('teaching')" class="text-blue-600 text-sm font-semibold flex items-center gap-1 hover:underline mb-4">
@@ -267,6 +272,48 @@
                 <div class="border-2 border-dashed border-slate-200 rounded-2xl p-12 text-center text-slate-400">
                     <i data-lucide="plus" class="mx-auto mb-2 w-8 h-8 opacity-20"></i>
                     <p class="text-sm">Paste additional lecture notes here</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="cs101-notes" class="section-content">
+            <div class="mb-8">
+                <button onclick="showSection('teaching')" class="text-blue-600 text-sm font-semibold flex items-center gap-1 hover:underline mb-4">
+                    <i data-lucide="arrow-left" class="w-4 h-4"></i> Back to Teaching
+                </button>
+                <h2 class="text-3xl font-bold text-slate-900">CS101: Lecture Notes</h2>
+                <p class="text-slate-500">Introduction to Programming (Python) (2023-24)</p>
+            </div>
+
+            <div class="space-y-8 prose prose-slate max-w-none">
+                <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm">
+                    <h3 class="text-xl font-bold text-slate-900 border-b pb-2 mb-4">Archive: Semester 1 Topics</h3>
+                    <p class="text-slate-600 mb-4">This section holds archived notes from the previous academic year covering foundational logic, loops, and basic data structures.</p>
+                </div>
+                <div class="border-2 border-dashed border-slate-200 rounded-2xl p-12 text-center text-slate-400">
+                    <i data-lucide="plus" class="mx-auto mb-2 w-8 h-8 opacity-20"></i>
+                    <p class="text-sm">Paste past lecture notes here</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="cs210-notes" class="section-content">
+            <div class="mb-8">
+                <button onclick="showSection('teaching')" class="text-blue-600 text-sm font-semibold flex items-center gap-1 hover:underline mb-4">
+                    <i data-lucide="arrow-left" class="w-4 h-4"></i> Back to Teaching
+                </button>
+                <h2 class="text-3xl font-bold text-slate-900">CS210: Lecture Notes</h2>
+                <p class="text-slate-500">Data Structures and Algorithms (2022-23)</p>
+            </div>
+
+            <div class="space-y-8 prose prose-slate max-w-none">
+                <div class="bg-white p-8 rounded-2xl border border-slate-200 shadow-sm">
+                    <h3 class="text-xl font-bold text-slate-900 border-b pb-2 mb-4">Archive: Big O Notation</h3>
+                    <p class="text-slate-600 mb-4">Archived material on time and space complexity analysis.</p>
+                </div>
+                <div class="border-2 border-dashed border-slate-200 rounded-2xl p-12 text-center text-slate-400">
+                    <i data-lucide="plus" class="mx-auto mb-2 w-8 h-8 opacity-20"></i>
+                    <p class="text-sm">Paste past lecture notes here</p>
                 </div>
             </div>
         </section>
